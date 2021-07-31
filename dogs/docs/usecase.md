@@ -1,3 +1,6 @@
+# ユースケース図
+
+```plantuml
 @startuml usecase
 left to right direction
 actor 利用者 as user
@@ -25,3 +28,4 @@ viewWanchans .d.> rentWanchan: <<extend>>
 good .u.> viewWanchans: <<include>>
 searchWanchan .u.>viewWanchans: <<include>>
 @enduml
+```
