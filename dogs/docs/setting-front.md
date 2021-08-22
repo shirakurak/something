@@ -36,14 +36,13 @@ Git bashがインストールされていること
       yarn --version
     ```
 
-## 3. Reactアプリを作成 (githubから`front`を落とせば不要？)
+## 3. frontアプリのライブラリをインストール
 
-- yarnをインストールした状態で、bashで以下のコマンドを実行
-  - `create-react-app ${アプリ名}`：指定したアプリ名でReactアプリを生成する
-  - `--template typescript`：TypeScriptファイルで生成する
+- frontアプリ直下で、bashで以下のコマンドを実行する
+  - 同階層に`package.json`が存在すること
 
-  ``` bash
-    npx create-react-app front --template typescript
+  ```bash
+    yarn install
   ```
 
 ## 4. Reactアプリを起動
@@ -60,3 +59,6 @@ Git bashがインストールされていること
     cd front
     yarn start
   ```
+
+- Webブラウザで以下URLにアクセス
+  - [localhost](http://localhost:3000)
