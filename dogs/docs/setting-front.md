@@ -56,7 +56,6 @@ Git bashがインストールされていること
 - bashで以下のコマンドを実行し、サーバを起動する
 
   ```bash
-    cd front
     yarn start
   ```
 
