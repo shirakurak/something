@@ -10,10 +10,11 @@
 
 ## 2. Eclipse
 
+- `ヘルプ>Eclipse IDEについて`
+  - Version: `2021-06 (4.20.0)`
+
 - Eclipseで使用するJavaのバージョン
   - `ウィンドウ>設定>Java>インストール済みのJRE`
-
-※shirakuraは、`2021年8月23日時点の最新版`をインストールして使用する予定
 
 ### 3. Maven
 
@@ -26,6 +27,9 @@
 - インストール手順参考：
   - https://www.dbonline.jp/mysql/
 
+- Windowsサービスに登録し、自動起動の設定をする
+  - https://www.dbonline.jp/mysql/install/index4.html
+
 ## 5. Spring Boot
 
 - プロジェクト作成についてメモ
@@ -33,6 +37,12 @@
   - 名前：`backend`, タイプ：`Maven`, Javaバージョン：`16`
   - Spring Boot バージョン：`2.5.4`
   - 依存関係は選択せず、完了
+
+
+## MyBatis
+
+## 確認手順
+
 
 ---
 `.gitignore`
