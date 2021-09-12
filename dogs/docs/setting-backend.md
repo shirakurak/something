@@ -1,3 +1,4 @@
+# setting-backend
 
 ### 1. Java
 
@@ -29,7 +30,7 @@
 - 次を参考に、MySQLのダウンロード/インストールを実施する。
   - [MySQL Community Serverのダウンロード](https://www.dbonline.jp/mysql/install/index1.html)
   - [MySQL Community Serverのインストール](https://www.dbonline.jp/mysql/install/index2.html)
-    - rootのpasswordはメモしとこうね
+    - rootのpasswordは、`password123`にした
     - Portはデフォルトのままにしておいた:`3306`
 - 次を参考に、コマンドプロンプトからのMySQLへの接続を行える。
   - [コマンドラインツールにPATHを設定する](https://www.dbonline.jp/mysql/connect/index6.html)
@@ -111,6 +112,9 @@
       1 row in set (0.00 sec)
       ```
 
+TODO:
+`pom.xml`の`mysql-connector-java`の`dependency`の警告部分修正したい。
+
 - MySQL Workbench
   - あとで書けたら書く
 
@@ -125,8 +129,37 @@
 
 ### 6. MyBatis
 
+※確認中
+
+以下は、shirakuraがプロジェクト作成時に行ったメモ。あとで必要部分を残し、その他は切り出す（かも）。現状の実装と違うとこあるので、修正必要。
+
+- `pom.xml`に以下を追加し、プロジェクトを右クリック：`Maven>プロジェクトの更新`
+  - ```
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+    ```
+  - [ここ](https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter)の最新版(May, 2021)。
+- MySQL接続情報を書く
+  - `/backend/src/main/resources/application.properties`
+    - ```
+      spring.datasource.url=jdbc:mysql://localhost:3306/testdb
+      spring.datasource.username=root
+      spring.datasource.password=password
+      spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+      ```
+- データは`4. MySQL`で用意したものを利用。
+
+参考
+- [Spring Boot + MyBatisでデータベースに接続する方法](https://medium-company.com/spring-boot-mybatis/)
+
+
+
 ## 確認手順
 
+pull後に確認すべきことを書けたら書く。
 
 ---
 `.gitignore`
