@@ -1,11 +1,11 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.example.demo.Service.UserService;
+import com.example.demo.service.UserService;
 
 /**
  * とりあえず、MySQLからデータを取ってこれるか検証する用に作成したController
