@@ -27,7 +27,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
 		<dependency>
 		    <groupId>org.mybatis.spring.boot</groupId>
@@ -40,7 +40,14 @@
         	<artifactId>lombok</artifactId>
         	<optional>true</optional>
     	</dependency>
-
+    			
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.26</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
