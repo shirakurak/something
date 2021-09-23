@@ -83,33 +83,58 @@
       +------------+
       1 row in set (0.00 sec)
       ```
-  - テーブルを作成
-    - ```
-      mysql> create table users (id int, name varchar(10), password varchar(10));
-      Query OK, 0 rows affected (0.22 sec)
-      mysql> show tables;
-      +------------------+
-      | Tables_in_testdb |
-      +------------------+
-      | users            |
-      +------------------+
-      1 row in set (0.04 sec)
-      ```
-  - データを作成  
-    - ```
-      mysql> insert into users values (1, 'taro', 'password');
-      Query OK, 1 row affected (0.03 sec)
-      ```
-    - ```
-      mysql> select * from users;
-      +------+------+----------+
-      | id   | name | password |
-      +------+------+----------+
-      |    1 | taro | password |
-      +------+------+----------+
-      1 row in set (0.00 sec)
-      ```
 
+以下の手順は、Spring Bootの動作確認の前手順として必要。
+
+- テーブルを作成
+  - ```
+    mysql> create table users (user_id int, user_name varchar(10), password varchar(10));
+    Query OK, 0 rows affected (0.22 sec)
+
+    mysql> create table dogs (dog_id int, dog_name varchar(50), area varchar(10));
+    Query OK, 0 rows affected (1.16 sec)
+    ```
+  - ```
+    mysql> show tables;
+    +------------------+
+    | Tables_in_testdb |
+    +------------------+
+    | dogs             |
+    | users            |
+    +------------------+
+    2 rows in set (0.11 sec)
+    ```
+- データを作成  
+  - ```
+    mysql> insert into users values (1, 'taro', 'password');
+    Query OK, 1 row affected (0.03 sec)
+    
+    mysql> insert into dogs values (3001, 'ケルベロス', '群馬');
+    Query OK, 1 row affected (0.02 sec)
+    mysql> insert into dogs values (3002, 'チワワ', '大阪');
+    Query OK, 1 row affected (0.02 sec)
+    ```
+  - ```
+    mysql> select * from users;
+    +------+------+----------+
+    | id   | name | password |
+    +------+------+----------+
+    |    1 | taro | password |
+    +------+------+----------+
+    1 row in set (0.00 sec)
+
+    mysql> select * from dogs;
+    +--------+------------+------+
+    | dog_id | dog_name   | area |
+    +--------+------------+------+
+    |   3002 | チワワ     | 大阪 |
+    |   3001 | ケルベロス | 群馬 |
+    +--------+------------+------+
+    2 rows in set (0.00 sec)
+    ```
+
+あとでテーブル定義書を書く必要あり。
+制約も入れて。正規化も必要に応じて。
 
 参考
 - [MySQLの使い方](https://www.dbonline.jp/mysql/)
