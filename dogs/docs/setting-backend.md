@@ -208,6 +208,7 @@ TODO:
 わん！
 ```
 
+※以下のメソッドは消去したので、あとで消す
 ブラウザで以下にアクセス
 http://localhost:1598/test1
 
@@ -224,6 +225,15 @@ hello()メソッドが呼び出されました。
 ブラウザ画面に`あった`と表示される。
 
 pull後に確認すべきことを書けたら書く。
+
+以下にブラウザでアクセスして確かめられる
+- [ログイン](http://localhost:1598/api/login/userId/1/password/password)
+- [ワンちゃん一覧](http://localhost:1598/api/dogs)
+
+※この辺のURLあたりは別途検討必要かも
+
+参考：
+- [簡単なWebAPIを作ってみよう編](https://zenn.dev/sugaryo/books/spring-boot-run-up/viewer/api_controller)
 
 ---
 `.gitignore`
