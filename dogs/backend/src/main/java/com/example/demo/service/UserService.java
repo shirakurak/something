@@ -12,7 +12,7 @@ public class UserService {
 	@Autowired
 	private UserMapper mapper;
 	
-	public User selectUser(String userName, String password) {
-		return mapper.selectUser(userName, password);
+	public User selectUser(Integer userId, String password) {
+		return mapper.selectUser(userId, password);
 	}
 }
