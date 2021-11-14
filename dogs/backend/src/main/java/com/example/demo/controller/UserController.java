@@ -49,6 +49,7 @@ public class UserController {
 	 * ワンちゃん情報の取得用メソッド。
 	 * @return ワンちゃんたち
 	 */
+	@CrossOrigin
 	@GetMapping("/dogs")
 	public ResponseEntity<Map<Integer, Object>> getDogs() {
 		Map<Integer, Object> map = dogService.selectDogs();
