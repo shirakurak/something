@@ -27,20 +27,21 @@ export default function Login() {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleSubmit = () => {
-    axios.get(`http://localhost:1598/api/login/userId/1/password/password`)
-      .then(res => {
-        console.log('res:', res)
-        if(res.data === 1){
-          history.push('/dogs')
-        } else {
-          alert("ログイン失敗")
-        }
-      })
-      .catch(err => {
-        console.log('err:', err);
-      })
-
+  const handleClick = (userId:any,password:any) => {
+    if (userId !== null && password !== null){
+      axios.get(`http://localhost:1598/api/login/userId/` + userId.value + `/password/` + password.value)
+        .then(res => {
+          console.log('res:', res)
+          if(res.data === 1){
+            history.push('/dogs')
+          } else {
+            alert("ログイン失敗")
+          }
+        })
+        .catch(err => {
+          console.log('err:', err);
+        })
+    }
   }
 
   return (
@@ -53,7 +54,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <TextField
+         <TextField
           variant="outlined"
           margin="normal"
           required
@@ -77,10 +78,8 @@ export default function Login() {
           fullWidth
           variant="contained"
           color="primary"
-          onClick={handleSubmit}
-          //component={Link} // FIXME:バックエンド通信
-          //to="/dogs"
-        >
+          onClick={() => handleClick(document.getElementById("userId"),document.getElementById("password"))}
+       >
           Sign In
         </Button>
       </div>
