@@ -87,13 +87,7 @@
 以下の手順は、Spring Bootの動作確認の前手順として必要。
 
 - テーブルを作成
-  - ```
-    mysql> create table users (user_id int, user_name varchar(10), password varchar(10));
-    Query OK, 0 rows affected (0.22 sec)
-
-    mysql> create table dogs (dog_id int, dog_name varchar(50), area varchar(10));
-    Query OK, 0 rows affected (1.16 sec)
-    ```
+  - `dogs/docs/dogs.ddl`を実行
   - ```
     mysql> show tables;
     +------------------+
@@ -105,15 +99,7 @@
     2 rows in set (0.11 sec)
     ```
 - データを作成  
-  - ```
-    mysql> insert into users values (1, 'taro', 'password');
-    Query OK, 1 row affected (0.03 sec)
-    
-    mysql> insert into dogs values (3001, 'ケルベロス', '群馬');
-    Query OK, 1 row affected (0.02 sec)
-    mysql> insert into dogs values (3002, 'チワワ', '大阪');
-    Query OK, 1 row affected (0.02 sec)
-    ```
+  - `dogs/docs/test_data.sql`を実行
   - ```
     mysql> select * from users;
     +------+------+----------+
@@ -132,9 +118,6 @@
     +--------+------------+------+
     2 rows in set (0.00 sec)
     ```
-
-あとでテーブル定義書を書く必要あり。
-制約も入れて。正規化も必要に応じて。
 
 参考
 - [MySQLの使い方](https://www.dbonline.jp/mysql/)
@@ -208,29 +191,9 @@ TODO:
 わん！
 ```
 
-※以下のメソッドは消去したので、あとで消す
-ブラウザで以下にアクセス
-http://localhost:1598/test1
-
-コンソールに以下が表示される
-```
-[2m2021-09-23 11:50:06.631[0;39m [32m INFO[0;39m [35m8216[0;39m [2m---[0;39m [2m[nio-1598-exec-1][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2m2021-09-23 11:50:06.631[0;39m [32m INFO[0;39m [35m8216[0;39m [2m---[0;39m [2m[nio-1598-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
-[2m2021-09-23 11:50:06.632[0;39m [32m INFO[0;39m [35m8216[0;39m [2m---[0;39m [2m[nio-1598-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 0 ms
-hello()メソッドが呼び出されました。
-[2m2021-09-23 11:50:06.699[0;39m [32m INFO[0;39m [35m8216[0;39m [2m---[0;39m [2m[nio-1598-exec-1][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
-[2m2021-09-23 11:50:07.559[0;39m [32m INFO[0;39m [35m8216[0;39m [2m---[0;39m [2m[nio-1598-exec-1][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
-```
-
-ブラウザ画面に`あった`と表示される。
-
-pull後に確認すべきことを書けたら書く。
-
-以下にブラウザでアクセスして確かめられる
+ブラウザでアクセスして確かめられる：
 - [ログイン](http://localhost:1598/api/login/userId/1/password/password)
 - [ワンちゃん一覧](http://localhost:1598/api/dogs)
-
-※この辺のURLあたりは別途検討必要かも
 
 参考：
 - [簡単なWebAPIを作ってみよう編](https://zenn.dev/sugaryo/books/spring-boot-run-up/viewer/api_controller)
