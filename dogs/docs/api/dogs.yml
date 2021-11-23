@@ -13,7 +13,7 @@ info:
 # 必要性検討
 
 servers:
-  - url: https://localhost:1598/api
+  - url: http://localhost:1598/api
     description: ローカル開発環境
 
 components:
