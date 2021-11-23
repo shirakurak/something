@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,7 @@ public class UserController {
 	 * @param password パスワード
 	 * @return ログイン可否
 	 */
+	@CrossOrigin
 	@RequestMapping("/login/userId/{userId}/password/{password}")
 	public int login(@PathVariable Integer userId, @PathVariable String password) {
 		System.out.println("ログインを実行します。");
@@ -47,6 +49,7 @@ public class UserController {
 	 * ワンちゃん情報の取得用メソッド。
 	 * @return ワンちゃんたち
 	 */
+	@CrossOrigin
 	@GetMapping("/dogs")
 	public ResponseEntity<Map<Integer, Object>> getDogs() {
 		Map<Integer, Object> map = dogService.selectDogs();
