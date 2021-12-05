@@ -182,11 +182,32 @@ TODO:
     ``` properties
       spring.datasource.url=jdbc:mysql://localhost:3306/testdb
       spring.datasource.username=root
-      spring.datasource.password=password
+      spring.datasource.password=password123
       spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
     ```
 
 - データは`4. MySQL`で用意したものを利用。
+
+## 7. DBViewer
+
+- 次を参考に、EclipseにDBViewerをインストールする。
+  - [【Eclipse】DBViewerのインストール](https://qiita.com/nkojima/items/2a865b819071e7943761)
+- パースペクティブを`DBViewer`に切り替える。
+  - `DBツリー・ビュー`の`DBViewerPlugin`を右クリックし、`登録`を選択。
+  - `データベース定義`ウィンドウで以下を入力
+    - データベース定義名：`testdb`
+    - JDBCドライバー：`{ユーザディレクトリ}\.m2\repository\mysql\mysql-connector-java\8.0.26\mysql-connector-java-8.0.26.jar`
+    - `次へ`を押下
+  - `データベース定義`ウィンドウで以下を入力
+    - JDBC Driver：`com.mysql.cj.jdbc.Driver`
+    - JDBCタイプ：`Type4`
+    - 接続文字列：`jdbc:mysql://localhost:3306/testdb`
+    - 接続ユーザ：`root`
+    - 接続パスワード：`password123`
+    - `完了`を押下
+- 接続確認
+  - `DBツリー・ビュー`の`DBViewerPlugin`配下の`testdb`を右クリックし、`接続`を選択。
+  - `4. MySQL`で作成したDB情報が見れることを確認。
 
 ## 確認手順
 
