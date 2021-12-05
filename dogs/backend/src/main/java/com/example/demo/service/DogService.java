@@ -14,9 +14,9 @@ public class DogService {
 	@Autowired
 	private DogMapper mapper;
 	
-	public Map<Integer, Object> selectDogs() {
-		Map<Integer, Object> map = new HashMap<>();
-		mapper.selectDogs().stream().forEach(d -> map.put(d.getDogId(), d));
+	public Map<String, Object> selectDogs() {
+		Map<String, Object> map = new HashMap<>();
+		mapper.selectDogs().stream().forEach(d -> map.put(d.getId(), d));
 		
 		return map;
 	}

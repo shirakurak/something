@@ -51,8 +51,8 @@ public class UserController {
 	 */
 	@CrossOrigin
 	@GetMapping("/dogs")
-	public ResponseEntity<Map<Integer, Object>> getDogs() {
-		Map<Integer, Object> map = dogService.selectDogs();
-	    return new ResponseEntity<Map<Integer, Object>>(map, HttpStatus.OK);
+	public ResponseEntity<Map<String, Object>> getDogs() {
+		Map<String, Object> map = dogService.selectDogs();
+	    return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
 }
