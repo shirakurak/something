@@ -1,0 +1,16 @@
+{
+  "login_200":[
+    {
+      "id": "shirakurak",
+      "name": "白倉K",
+      "password": "P@ssw0rd"
+    }
+  ],
+  "login_401":[
+    {
+      "id": "null",
+      "name": "null",
+      "password": "null"
+    }
+  ]
+}

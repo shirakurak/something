@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,6 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+
+const LOGIN_URL = "http://localhost:1598/api/login"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,23 +27,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const classes = useStyles();
+  const [form, setForm] = useState({id:null, password:null})
   const history = useHistory();
 
-  const handleClick = (userId:any,password:any) => {
-    if (userId !== null && password !== null){
-      axios.get(`http://localhost:1598/api/login/userId/` + userId.value + `/password/` + password.value)
-        .then(res => {
-          console.log('res:', res)
-          if(res.data === 1){
-            history.push('/dogs')
-          } else {
-            alert("ログイン失敗")
-          }
-        })
-        .catch(err => {
-          console.log('err:', err);
-        })
-    }
+  const handleChange = (input:any) => (e:any) => {
+    setForm({...form, [input] : e.target.value})
+  };
+  const handleSubmit = (e:any) => {
+    e.preventDefault();
+    console.log('userId:',form.id,'password:',form.password)
+    axios.post(LOGIN_URL,form)
+      .then(res => {
+        console.log('res:', res)
+        history.push('/dogs')
+      })
+      .catch(err => {
+        console.log('err:', err);
+      })
   }
 
   return (
@@ -54,34 +56,38 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-         <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="userId"
-          label="User ID"
-          name="userId"
-          autoFocus
-        />
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          name="password"
-          label="Password"
-          type="password"
-          id="password"
-        />
-        <Button
-          fullWidth
-          variant="contained"
-          color="primary"
-          onClick={() => handleClick(document.getElementById("userId"),document.getElementById("password"))}
-       >
-          Sign In
-        </Button>
+        <form onSubmit = {handleSubmit}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="id"
+            label="ID"
+            name="id"
+            onChange={handleChange('id')}
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            onChange={handleChange('password')}
+          />
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            type = "submit"
+          >
+            Sign In
+          </Button>
+        </form>
       </div>
     </Container>
   );
