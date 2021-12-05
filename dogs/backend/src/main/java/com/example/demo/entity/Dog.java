@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Dog {
-	private int dogId;
-	private String dogName;
+	private String id;
+	private String name;
 	private String area;
 }

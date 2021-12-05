@@ -8,5 +8,5 @@ import com.example.demo.entity.Dog;
 
 @Mapper
 public interface DogMapper {
-	List<Dog> selectDogs();
+	List<Dog> findAll();
 }

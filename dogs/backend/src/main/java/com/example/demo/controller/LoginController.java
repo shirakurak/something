@@ -1,20 +1,17 @@
 package com.example.demo.controller;
 
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.User;
 import com.example.demo.repository.dto.UserDto;
-import com.example.demo.service.DogService;
 import com.example.demo.service.LoginService;
 
 /**
@@ -25,9 +22,7 @@ import com.example.demo.service.LoginService;
 public class LoginController {
 	
 	@Autowired
-	LoginService userService;
-	@Autowired
-	DogService dogService;
+	LoginService loginService;
 	
 	/**
 	 * 指定されたユーザIDとパスワードをもとにログイン処理を行います。。
@@ -39,7 +34,7 @@ public class LoginController {
 	public ResponseEntity<UserDto> login(@RequestBody UserDto userDto) {
 		System.out.println("ログインを実行します。");
 		
-		Optional<User> optUser = userService.findByIdAndPassword(userDto.getId(), userDto.getPassword());
+		Optional<User> optUser = loginService.findByIdAndPassword(userDto.getId(), userDto.getPassword());
 		
 		if(optUser.isEmpty()) {
 			System.out.println("指定されたユーザIDとパスワードに対するユーザが存在しません。");
@@ -61,15 +56,5 @@ public class LoginController {
 		  .password(optUser.get().getPassword())
 		  .build(),HttpStatus.OK);
 	}
-	
-	/**
-	 * ワンちゃん情報の取得用メソッド。
-	 * @return ワンちゃんたち
-	 */
-	@CrossOrigin
-	@GetMapping("/dogs")
-	public ResponseEntity<Map<Integer, Object>> getDogs() {
-		Map<Integer, Object> map = dogService.selectDogs();
-	    return new ResponseEntity<Map<Integer, Object>>(map, HttpStatus.OK);
-	}
+
 }
