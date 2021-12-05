@@ -6,5 +6,5 @@ import com.example.demo.entity.User;
 
 @Mapper
 public interface UserMapper {
-	User selectUser(Integer userId, String password);
+	User selectUser(String id, String password);
 }

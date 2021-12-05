@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ public class UserService {
 	@Autowired
 	private UserMapper mapper;
 	
-	public User selectUser(Integer userId, String password) {
-		return mapper.selectUser(userId, password);
+	public Optional<User> selectUser(String id, String password) {
+		return Optional.ofNullable(mapper.selectUser(id, password));
 	}
 }
