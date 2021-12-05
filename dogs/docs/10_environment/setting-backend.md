@@ -192,8 +192,10 @@ TODO:
 ```
 
 ブラウザでアクセスして確かめられる：
-- [ログイン](http://localhost:1598/api/login/userId/1/password/password)
+- [ログイン](http://localhost:1598/api/login/userId/0000000001/password/password)
+  - `http://localhost:1598/api/login/userId/0000000001/password/password`
 - [ワンちゃん一覧](http://localhost:1598/api/dogs)
+  - `http://localhost:1598/api/dogs`
 
 参考：
 - [簡単なWebAPIを作ってみよう編](https://zenn.dev/sugaryo/books/spring-boot-run-up/viewer/api_controller)
