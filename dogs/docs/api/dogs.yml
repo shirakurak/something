@@ -93,3 +93,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/login_response'
+        401:
+          description: "認証失敗時のレスポンス"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: null
+                  name:
+                    type: string
+                    example: null
+                  password:
+                    type: string
+                    example: null
