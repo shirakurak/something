@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.User;
 import com.example.demo.repository.dto.UserDto;
 import com.example.demo.service.DogService;
-import com.example.demo.service.UserService;
+import com.example.demo.service.LoginService;
 
 /**
  * 作成中
  */
 @RestController
 @RequestMapping("api")
-public class UserController {
+public class LoginController {
 	
 	@Autowired
-	UserService userService;
+	LoginService userService;
 	@Autowired
 	DogService dogService;
 	
@@ -39,7 +39,7 @@ public class UserController {
 	public ResponseEntity<UserDto> login(@RequestBody UserDto userDto) {
 		System.out.println("ログインを実行します。");
 		
-		Optional<User> optUser = userService.selectUser(userDto.getId(), userDto.getPassword());
+		Optional<User> optUser = userService.findByIdAndPassword(userDto.getId(), userDto.getPassword());
 		
 		if(optUser.isEmpty()) {
 			System.out.println("指定されたユーザIDとパスワードに対するユーザが存在しません。");

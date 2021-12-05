@@ -9,12 +9,12 @@ import com.example.demo.entity.User;
 import com.example.demo.repository.UserMapper;
 
 @Service
-public class UserService {
+public class LoginService {
 	
 	@Autowired
 	private UserMapper mapper;
 	
-	public Optional<User> selectUser(String id, String password) {
-		return Optional.ofNullable(mapper.selectUser(id, password));
+	public Optional<User> findByIdAndPassword(String id, String password) {
+		return mapper.findByIdAndPassword(id, password);
 	}
 }
