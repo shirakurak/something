@@ -1,3 +1,6 @@
+drop table if exists users;
+drop table if exists dogs;
+
 -- ユーザ（ワンちゃん志願者）
 create table users (id varchar(10), name varchar(10), password varchar(10));
 
