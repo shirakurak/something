@@ -35,7 +35,7 @@ const DOGS_URL = "http://localhost:1598/api/dogs"
 
 export default function Dogs() {
   const classes = useStyles();
-  const [dogs,setDogs] = useState([{id:"",name:"",area:"",img:""}]);
+  const [dogs,setDogs] = useState([{id:"",name:"",area:"",image:""}]);
   // 初回レンダリング時のみに実行
   useEffect(() => {
     axios.get(DOGS_URL)
@@ -55,8 +55,8 @@ export default function Dogs() {
           <ListSubheader component="div">ワンちゃん一覧</ListSubheader>
         </ImageListItem>
         {dogs.map((dog) => (
-          <ImageListItem key={dog.img} className="dog-images">
-            <img src={dog.img} alt={dog.name} onClick={()=>{alert(`${dog.name}の詳細画面を表示する`)}}/>
+          <ImageListItem key={dog.image} className="dog-images">
+            <img src={dog.image} alt={dog.name} onClick={()=>{alert(`${dog.name}の詳細画面を表示する`)}}/>
             <ImageListItemBar
               title={dog.name}
               subtitle={<span>{dog.area}</span>}
