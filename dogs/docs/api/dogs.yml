@@ -51,7 +51,7 @@ components:
     dog:
       description: ワンちゃん情報
       type: object
-      required: [id, name, area]
+      required: [id, name, area, image]
       properties:
         id:
           type: string
@@ -62,7 +62,10 @@ components:
         area:
           type: string
           example: "群馬"
- 
+        image:
+          type: string
+          example: "https://images.dog.ceo/breeds/shiba/shiba-10.jpg"
+
 paths:
   /dogs:
     get:
