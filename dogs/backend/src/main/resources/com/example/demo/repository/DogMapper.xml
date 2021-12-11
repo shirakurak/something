@@ -2,8 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.repository.DogMapper">
-    <!-- <select id="selectDogs" resultType="com.example.demo.entity.Dog"> -->
+<!--<mapper namespace="com.example.demo.repository.DogMapper">
     <select id="findAll" resultMap="dogsResultMap">
         SELECT * FROM Dogs;
     </select>
@@ -12,4 +11,4 @@
 		<result property="name" column="dog_name" />
 		<result property="area" column="area" />
 	</resultMap>
-</mapper>
+</mapper-->
