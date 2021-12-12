@@ -5,5 +5,5 @@ delete from dogs;
 insert into users values ('0000000001', 'taro', 'password');
 
 -- ワンちゃん
-insert into dogs values ('3000000001', 'ケルベロス', '群馬', 'dogs1.jpg'); 
-insert into dogs values ('3000000002', 'チワワ', '大阪', 'dogs2.jpg');
+insert into dogs values ('3000000001', 'ケルベロス', '群馬', 'dog1.jpg'); 
+insert into dogs values ('3000000002', 'チワワ', '大阪', 'dog2.jpg');
