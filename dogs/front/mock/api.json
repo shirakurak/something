@@ -1,0 +1,166 @@
+{
+  "login_200":[
+    {
+      "id": "shirakurak",
+      "name": "白倉K",
+      "password": "P@ssw0rd"
+    }
+  ],
+  "login_401":[
+    {
+      "id": "null",
+      "name": "null",
+      "password": "null"
+    }
+  ],
+  "dogs":[
+   {
+      "img": "dog1",
+      "name": "ケルベロス",
+      "area": "群馬",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-1.jpg"
+    },
+    {
+      "img": "dog2",
+      "name": "チワワ",
+      "area": "大阪",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-2.jpg"
+    },
+    {
+      "img": "dog3",
+      "name": "ハチ公",
+      "area": "東京",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+    {
+      "img": "dog4",
+      "name": "パトラッシュ",
+      "area": "北海道",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-4.jpg"
+    },
+    {
+      "img": "dog5",
+      "name": "いらすとや１",
+      "area": "佐賀",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+   {
+      "img": "dog1",
+      "name": "ケルベロス",
+      "area": "群馬",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-1.jpg"
+    },
+    {
+      "img": "dog2",
+      "name": "チワワ",
+      "area": "大阪",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-2.jpg"
+    },
+    {
+      "img": "dog3",
+      "name": "ハチ公",
+      "area": "東京",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+    {
+      "img": "dog4",
+      "name": "パトラッシュ",
+      "area": "北海道",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-4.jpg"
+    },
+    {
+      "img": "dog5",
+      "name": "いらすとや１",
+      "area": "佐賀",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+    {
+      "img": "dog1",
+      "name": "ケルベロス",
+      "area": "群馬",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-1.jpg"
+    },
+    {
+      "img": "dog2",
+      "name": "チワワ",
+      "area": "大阪",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-2.jpg"
+    },
+    {
+      "img": "dog3",
+      "name": "ハチ公",
+      "area": "東京",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+    {
+      "img": "dog4",
+      "name": "パトラッシュ",
+      "area": "北海道",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-4.jpg"
+    },
+    {
+      "img": "dog5",
+      "name": "いらすとや１",
+      "area": "佐賀",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },    {
+      "img": "dog1",
+      "name": "ケルベロス",
+      "area": "群馬",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-1.jpg"
+    },
+    {
+      "img": "dog2",
+      "name": "チワワ",
+      "area": "大阪",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-2.jpg"
+    },
+    {
+      "img": "dog3",
+      "name": "ハチ公",
+      "area": "東京",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+    {
+      "img": "dog4",
+      "name": "パトラッシュ",
+      "area": "北海道",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-4.jpg"
+    },
+    {
+      "img": "dog5",
+      "name": "いらすとや１",
+      "area": "佐賀",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },    {
+      "img": "dog1",
+      "name": "ケルベロス",
+      "area": "群馬",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-1.jpg"
+    },
+    {
+      "img": "dog2",
+      "name": "チワワ",
+      "area": "大阪",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-2.jpg"
+    },
+    {
+      "img": "dog3",
+      "name": "ハチ公",
+      "area": "東京",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    },
+    {
+      "img": "dog4",
+      "name": "パトラッシュ",
+      "area": "北海道",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-4.jpg"
+    },
+    {
+      "img": "dog5",
+      "name": "いらすとや１",
+      "area": "佐賀",
+      "image": "https://images.dog.ceo/breeds/shiba/shiba-5.jpg"
+    }
+  ]
+}

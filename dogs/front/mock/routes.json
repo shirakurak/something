@@ -1,0 +1,4 @@
+{
+  "/api/login": "/login",
+  "/api/dogs": "/dogs"
+}
