@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  description: "ワンちゃんワンチャンに関するAPIです。ユーザはログインした後、ワンちゃんの情報を取得します。"
+  version: "1.0.0"
+  title: "Dogs API"
+#  termsOfService: "http://swagger.io/terms/"
+#  contact:
+#    email: "ken1shirakura@gmail.com"
+#  license:
+#    name: "Apache 2.0"
+#    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+# host: localhost3000
+# 必要性検討
+
+servers:
+  - url: http://localhost:1598/api
+    description: ローカル開発環境
+
+components:
+  schemas:
+    login_reqest:
+      description: ログイン用APIのリクエスト情報
+      type: object
+      required: [id, password]
+      properties:
+        id:
+          type: string
+          example: "shirakurak"
+        password:
+          type: string
+          example: "P@ssw0rd"
+    login_response:
+      description: ログイン用APIのレスポンス情報
+      type: object
+      required: [id, name, password]
+      properties:
+        id:
+          type: string
+          example: "shirakurak"
+        name:
+          type: string
+          example: "白倉K"
+        password:
+          type: string
+          example: "P@ssw0rd"
+    dogs_response:
+        description: ワンちゃん情報取得APIのレスポンス情報
+        type: array
+        items:
+          $ref: '#/components/schemas/dog'
+    dog:
+      description: ワンちゃん情報
+      type: object
+      required: [id, name, area, image]
+      properties:
+        id:
+          type: string
+          example: "00000001"
+        name:
+          type: string
+          example: "ケルベロス"
+        area:
+          type: string
+          example: "群馬"
+        image:
+          type: string
+          example: "https://images.dog.ceo/breeds/shiba/shiba-10.jpg"
+
+paths:
+  /dogs:
+    get:
+      summary: "ワンちゃん情報取得API"
+      description: "ワンちゃん情報を返します"
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dogs_response'
+  /login:
+    post:
+      summary: "ログイン用API"
+      description: "ログインを行います"
+      requestBody:
+        description: "ログイン用APIのリクエスト情報"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/login_reqest'
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/login_response'
+        401:
+          description: "認証失敗時のレスポンス"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: null
+                  name:
+                    type: string
+                    example: null
+                  password:
+                    type: string
+                    example: null
