@@ -104,39 +104,12 @@
 
 - テーブルを作成
   - `dogs/docs/dogs.ddl`を実行
-
-    ``` cmd
-      mysql> show tables;
-      +------------------+
-      | Tables_in_testdb |
-      +------------------+
-      | dogs             |
-      | users            |
-      +------------------+
-      2 rows in set (0.11 sec)
-    ```
-
+  - 次で確認：`show tables;`
 - データを作成  
-  - `dogs/docs/test_data.sql`を実行
+  - `dogs/docs/test_data.sql`を実行(複数のinsert文を一気にコピペして実行することが可能)
+  - 例えば、次のsqlで確認：`select * from users;`
 
-    ``` cmd
-      mysql> select * from users;
-      +------+------+----------+
-      | id   | name | password |
-      +------+------+----------+
-      |    1 | taro | password |
-      +------+------+----------+
-      1 row in set (0.00 sec)
-
-      mysql> select * from dogs;
-      +--------+------------+------+
-      | dog_id | dog_name   | area |
-      +--------+------------+------+
-      |   3002 | チワワ     | 大阪 |
-      |   3001 | ケルベロス | 群馬 |
-      +--------+------------+------+
-      2 rows in set (0.00 sec)
-      ```
+※`dog_sql.bat`を実行すれば、ddlおよびsqlファイルを一括で実行できる
 
 参考
 
@@ -208,7 +181,9 @@ TODO:
 - 接続確認
   - `DBツリー・ビュー`の`DBViewerPlugin`配下の`testdb`を右クリックし、`接続`を選択。
   - `4. MySQL`で作成したDB情報が見れることを確認。
-  
+
+※DBViewerによりDB接続している場合、コマンドプロンプトから`alter`文や`drop`文を実行できないことに注意。
+
 ## 確認手順
 
 `4. MySQL`を実施し、以下のデータが作成されているとする。
@@ -238,18 +213,8 @@ TODO:
 わん！
 ```
 
-ブラウザでアクセスして確かめられる：
+ブラウザで[ログイン](http://localhost:1598/api/login)画面にアクセスして確かめられる：`http://localhost:1598/api/login`
 
-- [ログイン](http://localhost:1598/api/login/userId/1/password/password)
-- [ワンちゃん一覧](http://localhost:1598/api/dogs)
-
-参考：
+参考
 
 - [簡単なWebAPIを作ってみよう編](https://zenn.dev/sugaryo/books/spring-boot-run-up/viewer/api_controller)
-
----
-
-`.gitignore`
-
-- `Servers`？
-- `.mvn`, `mvnw`, `mvnw.cmd`

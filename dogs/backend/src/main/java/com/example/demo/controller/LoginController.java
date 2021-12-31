@@ -14,9 +14,6 @@ import com.example.demo.dto.UserDto;
 import com.example.demo.entity.User;
 import com.example.demo.service.LoginService;
 
-/**
- * 作成中
- */
 @RestController
 @RequestMapping("api")
 public class LoginController {
@@ -25,7 +22,7 @@ public class LoginController {
 	LoginService loginService;
 	
 	/**
-	 * 指定されたユーザIDとパスワードをもとにログイン処理を行います。。
+	 * 指定されたユーザIDとパスワードをもとにログイン処理を行います。
 	 * @param userDto リクエストボディ
 	 * @return ユーザ情報
 	 */

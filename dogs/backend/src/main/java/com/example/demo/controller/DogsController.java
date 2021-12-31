@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.dto.DogDto;
 import com.example.demo.service.DogService;
 
-/**
- * 作成中
- */
 @RestController
 @RequestMapping("api")
 public class DogsController {
@@ -37,6 +34,7 @@ public class DogsController {
 				.id(dog.getId())
 				.name(dog.getName())
 				.area(dog.getArea())
+				.image(dog.getImagePath())
 				.build();
 		}).toList();
 		

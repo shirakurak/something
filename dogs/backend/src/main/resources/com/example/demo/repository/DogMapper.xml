@@ -7,8 +7,9 @@
         SELECT * FROM Dogs;
     </select>
 	<resultMap id="dogsResultMap"  type="com.example.demo.entity.Dog" >
-		<result property="id" column="dog_id" />
-		<result property="name" column="dog_name" />
+		<result property="id" column="id" />
+		<result property="name" column="name" />
 		<result property="area" column="area" />
+		<result property="imagePath" column="image_path" />
 	</resultMap>
 </mapper-->
