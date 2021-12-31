@@ -9,4 +9,5 @@ public class DogDto {
 	private String id;
 	private String name;
 	private String area;
+	private String image;
 }

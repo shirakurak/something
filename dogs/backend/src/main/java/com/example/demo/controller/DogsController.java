@@ -37,6 +37,7 @@ public class DogsController {
 				.id(dog.getId())
 				.name(dog.getName())
 				.area(dog.getArea())
+				.image(dog.getImagePath())
 				.build();
 		}).toList();
 		
