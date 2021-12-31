@@ -104,10 +104,12 @@
 
 - テーブルを作成
   - `dogs/docs/dogs.ddl`を実行
-  - 次のコマンドで確認：`show tables;`
+  - 次で確認：`show tables;`
 - データを作成  
   - `dogs/docs/test_data.sql`を実行(複数のinsert文を一気にコピペして実行することが可能)
   - 例えば、次のsqlで確認：`select * from users;`
+
+※`dog_sql.bat`を実行すれば、ddlおよびsqlファイルを一括で実行できる
 
 参考
 
