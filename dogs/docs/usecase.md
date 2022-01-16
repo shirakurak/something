@@ -3,8 +3,10 @@
 ```plantuml
 @startuml usecase
 left to right direction
-actor 利用者 as user
+actor 飼い主 as owner
+actor 志願者 as applicant
 actor ワンちゃん as wanchan
+actor 管理者 as manager
 
 package WanchanOneChance {
   usecase "ログインする" as login
@@ -19,13 +21,17 @@ package WanchanOneChance {
   usecase "レコメンドを表示する" as recommend 
 }
 
-user --> login
-user --> registerRequestWanchan
-user --> registerOwner
-user --> viewWanchans
-user --> viewRequestWanchan
+owner --> login
+applicant --> login
+applicant --> registerRequestWanchan
+owner --> registerOwner
+applicant --> viewWanchans
+owner --> viewRequestWanchan
 viewWanchans .d.> rentWanchan: <<extend>>
 good .u.> viewWanchans: <<include>>
 searchWanchan .u.>viewWanchans: <<include>>
+owner --> assessment
+applicant --> assessment
+recommend --> applicant
 @enduml
 ```
