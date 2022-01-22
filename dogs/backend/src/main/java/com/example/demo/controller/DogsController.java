@@ -29,16 +29,9 @@ public class DogsController {
 	public ResponseEntity<List<DogDto>> getAllDogs() {
 		System.out.println("ワンちゃん一覧情報を取得します");
 		
-		List<DogDto> dogs = dogService.findAll().stream().map(dog -> {
-			return DogDto.builder()
-				.id(dog.getId())
-				.name(dog.getName())
-				.area(dog.getArea())
-				.image(dog.getImagePath())
-				.build();
-		}).toList();
+		List<DogDto> dogs = dogService.findAll();
 		
-		System.out.println("ワンちゃん一覧情報：" + dogs);
+		dogs.forEach(d -> System.out.println(d.toString()));
 	    return new ResponseEntity<List<DogDto>>(dogs, HttpStatus.OK);
 	}
 }
