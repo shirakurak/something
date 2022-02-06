@@ -56,7 +56,7 @@ export default function Dogs() {
         </ImageListItem>
         {dogs.map((dog) => (
           <ImageListItem key={dog.image} className="dog-images">
-            <img src={dog.image} alt={dog.name} onClick={()=>{alert(`${dog.name}の詳細画面を表示する`)}}/>
+            <img src={'data:image/png;base64,' + dog.image} alt={dog.name} onClick={()=>{alert(`${dog.name}の詳細画面を表示する`)}}/>
             <ImageListItemBar
               title={dog.name}
               subtitle={<span>{dog.area}</span>}
