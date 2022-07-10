@@ -15,3 +15,7 @@
 .login-title {
   font-size: 24px;
 }
+
+.errorMsg{
+  color:red;
+}

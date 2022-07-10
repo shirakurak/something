@@ -5,6 +5,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content color="primaty">
+    <span class="errorMsg">{{errorMsg}}</span>
     <form (ngSubmit)="onSubmit()" class="login-form" #loginForm="ngForm">
       <mat-form-field>
         <input matInput placeholder="User Id" id="key" [(ngModel)]="keySet.key" name="key" #key="ngModel" required>
