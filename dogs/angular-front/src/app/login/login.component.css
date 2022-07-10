@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  padding:24px;
+}
+
+.login-card {
+  max-width: auto;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 24px;
+}
