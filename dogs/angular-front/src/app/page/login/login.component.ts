@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginUser } from '../../models/loginUser';
+import { User } from '../../models/user';
 
-export class LoginKeySet {
-  constructor(public key: string, public password: string){}
+export class FormKeySet {
+  constructor(public key: string, public password: string, public name?: string){}
 }
 
 @Component({
@@ -14,30 +14,52 @@ export class LoginKeySet {
 })
 
 export class LoginComponent implements OnInit {
-  keySet = new LoginKeySet('','');
+  keySet = new FormKeySet('','');
   hide = true;
+  selectedValue: string;
   errorMsg: string;
-  loginUrl: string = 'http://localhost:1598/api/login';
+  apiUrl: string = 'http://localhost:1598/api';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' })
   };
-  response: LoginUser;
+  response: User;
   
   constructor(private http: HttpClient,private router: Router){}
+public selectedVal: string;
 
-  ngOnInit(): void {}
+  ngOnInit(){
+    this.selectedVal = "login";
+  }
 
-  onSubmit() {
-    const data = new LoginUser(this.keySet.key, this.keySet.password);
-    this.http.post<LoginUser>(this.loginUrl,data,this.httpOptions)
-    .subscribe(
-      (response)=>{
-        this.response = response;
-        this.router.navigateByUrl('/dogs');
-      },
-      (error) => {
-        this.errorMsg = "指定されたユーザIDとパスワードに対するユーザが存在しません。";
-      }
-    );
+  public onValChange(val: string) {
+    this.selectedVal = val;
+  }
+
+  onSubmit(type:string) {
+    if (type === "login") {
+      const data = new User(this.keySet.key, this.keySet.password);
+      this.http.post<User>(this.apiUrl+"/login",data,this.httpOptions)
+      .subscribe(
+        (response)=>{
+          this.response = response;
+          this.router.navigateByUrl('/dogs');
+        },
+        (error) => {
+          this.errorMsg = "指定されたユーザIDとパスワードに対するユーザが存在しません。";
+        }
+      );
+    } else if (type === "register") {
+      const data = new User(this.keySet.key, this.keySet.password, this.keySet.name);
+      this.http.put<User>(this.apiUrl+"/register",data,this.httpOptions)
+      .subscribe(
+        (response)=>{
+          this.response = response;
+          this.router.navigateByUrl('/dogs');
+        },
+        (error) => {
+          this.errorMsg = "ユーザ登録に失敗しました。";
+        }
+      );
+    }
   }
 }

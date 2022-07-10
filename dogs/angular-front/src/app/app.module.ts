@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DogsComponent } from './page/dogs/dogs.component';
@@ -30,6 +31,7 @@ import { DogDetailComponent } from './page/dog-detail/dog-detail.component';
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
+    MatButtonToggleModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
