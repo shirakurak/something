@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginUser } from '../models/loginUser';
+import { LoginUser } from '../../models/loginUser';
 
 export class LoginKeySet {
   constructor(public key: string, public password: string){}
@@ -23,23 +23,20 @@ export class LoginComponent implements OnInit {
   };
   response: LoginUser;
   
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient,private router: Router){}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log("key:"+this.keySet.key);
     const data = new LoginUser(this.keySet.key, this.keySet.password);
     this.http.post<LoginUser>(this.loginUrl,data,this.httpOptions)
     .subscribe(
       (response)=>{
         this.response = response;
-        console.log(response);
+        this.router.navigateByUrl('/dogs');
       },
       (error) => {
-        this.errorMsg = "ログインに失敗しました";
+        this.errorMsg = "指定されたユーザIDとパスワードに対するユーザが存在しません。";
       }
     );
   }
