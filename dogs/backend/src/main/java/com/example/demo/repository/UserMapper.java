@@ -10,4 +10,7 @@ import com.example.demo.entity.User;
 @Mapper
 public interface UserMapper extends JpaRepository<User, String> {
 	Optional<User> findByIdAndPassword(String id, String password);
+	
+	@SuppressWarnings("unchecked")
+	User save(User user);
 }

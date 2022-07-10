@@ -9,12 +9,16 @@ import com.example.demo.entity.User;
 import com.example.demo.repository.UserMapper;
 
 @Service
-public class LoginService {
+public class UserService {
 	
 	@Autowired
 	private UserMapper mapper;
 	
 	public Optional<User> findByIdAndPassword(String id, String password) {
 		return mapper.findByIdAndPassword(id, password);
+	}
+	
+	public void register(User user) {
+		mapper.save(user);
 	}
 }
