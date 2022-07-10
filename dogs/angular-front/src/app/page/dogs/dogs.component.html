@@ -1,0 +1,6 @@
+<div class="grid">
+  <mat-card *ngFor="let dog of dogs" (click)="showDetail(dog)">
+    <img src="data:image/png;base64,{{dog.image}}">
+    <p class="dog-name">{{dog.name}}</p>
+  </mat-card>
+</div>

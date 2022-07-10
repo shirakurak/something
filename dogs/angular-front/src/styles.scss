@@ -1,0 +1,26 @@
+/* ::::: テーマカラーのカスタマイズ ::::: */
+
+// テーマ操作関数をライブラリからインポート
+@import '~@angular/material/theming';
+
+// Angular Material の共通スタイルをインクルード
+@include mat-core();
+
+// 色定義： オプションは hue カラーパレットで色コード指定, 参照: https://material.io/design/color/ and https://material.io/tools/color/
+$my-app-primary: mat-palette($mat-light-blue, 800);
+$my-app-accent:  mat-palette($mat-cyan, 600);
+$my-app-warn:    mat-palette($mat-pink, 500, 900, A100);
+
+// テーマとして色定義をまとめる
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+// カスタムテーマを適用
+@include angular-material-theme($my-app-theme);
+
+/* ::::: アプリ全体のスタイルを以下に指定 ::::: */
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family:Arial, Helvetica, sans-serif;
+}

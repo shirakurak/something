@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+mat-card {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width:auto;
+}
+
+.dog-name {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
