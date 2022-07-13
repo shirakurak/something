@@ -3,7 +3,7 @@
     <mat-button-toggle value="login">Login</mat-button-toggle>
     <mat-button-toggle value="register">Register</mat-button-toggle>
   </mat-button-toggle-group>
-  <mat-card-content color="primaty">
+  <mat-card-content color="primary">
     <span class="errorMsg">{{errorMsg}}</span>
     <ng-container *ngIf="selectedVal === 'login'">
       <form (ngSubmit)="onSubmit('login')" class="login-form" #loginForm="ngForm">

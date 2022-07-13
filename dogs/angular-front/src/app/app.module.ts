@@ -15,13 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DogsComponent } from './page/dogs/dogs.component';
 import { DogDetailComponent } from './page/dog-detail/dog-detail.component';
+import { OwnerRegisterComponent } from './page/owner-register/owner-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DogsComponent,
-    DogDetailComponent
+    DogDetailComponent,
+    OwnerRegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../../models/user';
+import { User } from '../../models/User';
 
 export class FormKeySet {
   constructor(public key: string, public password: string, public name?: string){}
