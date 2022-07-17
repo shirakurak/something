@@ -1,12 +1,8 @@
-<mat-card class="login-card">
-  <mat-button-toggle-group #group="matButtonToggleGroup" [value]="selectedVal" (change)="onValChange(group.value)">
-    <mat-button-toggle value="login">Login</mat-button-toggle>
-    <mat-button-toggle value="register">Register</mat-button-toggle>
-  </mat-button-toggle-group>
-  <mat-card-content color="primary">
-    <span class="errorMsg">{{errorMsg}}</span>
-    <ng-container *ngIf="selectedVal === 'login'">
-      <form (ngSubmit)="onSubmit('login')" class="login-form" #loginForm="ngForm">
+<div class="login">
+  <mat-card class="login-card">
+    <mat-card-content color="primary">
+      <span class="errorMsg">{{errorMsg}}</span>
+      <form (ngSubmit)="onSubmit()" class="login-form" #loginForm="ngForm">
         <mat-form-field>
           <input matInput placeholder="User Id" id="key" [(ngModel)]="keySet.key" name="key" #key="ngModel" required>
           <mat-error *ngIf="key.errors?.required">You must enter a value</mat-error>
@@ -19,24 +15,9 @@
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
       </form>
-    </ng-container>
-    <ng-container *ngIf="selectedVal === 'register'">
-      <form (ngSubmit)="onSubmit('register')" class="register-form" #loginForm="ngForm">
-        <mat-form-field>
-          <input matInput placeholder="User Id" id="key" [(ngModel)]="keySet.key" name="key" #key="ngModel" required>
-          <mat-error *ngIf="key.errors?.required">You must enter a value</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="User Name" id="name" [(ngModel)]="keySet.name" name="name" #key="ngModel" required>
-          <mat-error *ngIf="key.errors?.required">You must enter a value</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input [type]="hide ? 'password' : 'text'" matInput placeholder="Password" id="password" [(ngModel)]="keySet.password" name="password" #password="ngModel" required>
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-          <mat-error *ngIf="password.errors?.required">You must enter a value</mat-error>
-        </mat-form-field>
-        <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Register</button>
-      </form>
-    </ng-container>
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+  <div class="register">
+    <a routerLink="/register">新規会員登録</a>
+  </div>
+</div>
