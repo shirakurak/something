@@ -39,9 +39,6 @@ public class UserController {
 			System.out.println("id=" + userDto.getId() + " password=" + userDto.getPassword());
 			return new ResponseEntity<UserDto>(
 				UserDto.builder()
-				.id(null)
-				.name(null)
-				.password(null)
 				.build(),HttpStatus.UNAUTHORIZED);
 		}
 
@@ -52,6 +49,7 @@ public class UserController {
 		  .id(optUser.get().getId())
 		  .name(optUser.get().getName())
 		  .password(optUser.get().getPassword())
+		  .roll(optUser.get().getRoll())
 		  .build(),HttpStatus.OK);
 	}
 
