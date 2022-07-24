@@ -10,6 +10,8 @@ import lombok.ToString;
 public class DogDto {
 	private String id;
 	private String name;
-	private String area;
+	private String kind;
+	private String age;
+	private String sex;
 	private String image;
 }
