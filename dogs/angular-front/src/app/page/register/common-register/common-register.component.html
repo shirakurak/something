@@ -1,0 +1,42 @@
+<div>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>ID</mat-label>
+        <input type="id" id="id" name="id" [(ngModel)]="user.id" #id="ngModel" matInput required (change)="checkInput($event)">
+        <mat-error *ngIf="id.errors?.required">
+          IDは<strong>必須項目です</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>ユーザ名</mat-label>
+        <input type="name" id="name" name="name" [(ngModel)]="user.name" #name="ngModel" matInput required (change)="checkInput($event)">
+        <mat-error *ngIf="name.errors?.required">
+          ユーザ名は<strong>必須項目です</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+   <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <input [type]="hide ? 'password' : 'text'" matInput placeholder="Password" id="password" [(ngModel)]="user.password" name="password" #password="ngModel" required (change)="checkInput($event)">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="password.errors?.required">You must enter a value</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>住所</mat-label>
+        <input type="address" id="address" name="address" [(ngModel)]="user.address" #address="ngModel" matInput required (change)="checkInput($event)">
+        <mat-error *ngIf="address.errors?.required">
+         住所は<strong>必須項目です</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-radio-group class="full-width" aria-label="Select an option" [(ngModel)]="user.roll" #roll="ngModel" (change)="checkInput($event)">
+        <mat-radio-button value="applicant">志願者</mat-radio-button>
+        <mat-radio-button value="owner">飼い主</mat-radio-button>
+      </mat-radio-group>
+    </p>
+</div>

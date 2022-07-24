@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Dog } from '../../models/Dog';
+import { StepperService } from 'src/app/service/stepperService';
+import { Dog } from '../../../models/Dog';
+import { RegisterComponent } from '../register.component';
 
 @Component({
   selector: 'app-owner-register',
@@ -9,17 +11,18 @@ import { Dog } from '../../models/Dog';
 })
 
 export class OwnerRegisterComponent implements OnInit {
-  pet = new Dog('','','','');
+  dog = new Dog('','','','','','');
   @ViewChild('UploadFileInput') uploadFileInput: ElementRef;
-  myfilename = '写真';
+  myfilename: string;
   apiUrl: string = 'http://localhost:1598/api';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' })
   };
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private stepperService:StepperService, private register:RegisterComponent) { }
 
   ngOnInit(): void {
+    this.dog = this.register.getDog();
   }
 
   fileChangeEvent(fileInput: any) {
@@ -41,29 +44,35 @@ export class OwnerRegisterComponent implements OnInit {
 
           // Return Base64 Data URL
           const imgBase64Path = e.target.result;
-          this.pet.image = imgBase64Path;
+          this.dog.image = imgBase64Path;
+          this.checkInput();
         };
       };
       reader.readAsDataURL(fileInput.target.files[0]);
-
       // Reset File Input to Selct Same file again
       this.uploadFileInput.nativeElement.value = "";
     } else {
-      this.myfilename = '写真';
+      this.myfilename = '';
     }
   }
   
-  onSubmit(): void {
-      console.log("image:"+this.pet.image);
-      this.http.post(this.apiUrl+"/dog",this.pet,this.httpOptions)
-      .subscribe(
-        (response)=>{
-          console.log("success");
-        },
-        (error) => {
-          console.log("failed");
-        }
-      );
+  checkInput($event?: Readonly<Event>): void {
+      if (this.dog.name != "" && this.dog.kind != ""
+      && this.dog.age != "" && this.dog.sex != ""
+      && this.dog.image != "") {
+        console.log("next")
+        this.register.stepper.setSecondStep({
+          editable:true,
+          completed:true,
+          linear:true
+        });
+      } else {
+        this.register.stepper.setSecondStep({
+          editable:true,
+          completed:false,
+          linear:true
+        });
+      }
   }
 
 }

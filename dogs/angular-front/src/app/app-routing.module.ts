@@ -3,7 +3,7 @@ import {Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './page/login/login.component';
 import { DogsComponent } from './page/dogs/dogs.component';
 import { DogDetailComponent } from './page/dog-detail/dog-detail.component';
-import { OwnerRegisterComponent } from './page/owner-register/owner-register.component';
+import { RegisterComponent } from './page/register/register.component';
 
 const routes: Routes = [
   {
@@ -22,9 +22,9 @@ const routes: Routes = [
     component: DogDetailComponent
   },
   {
-    path: 'owner-register',
+    path: 'register',
     pathMatch: 'full',
-    component: OwnerRegisterComponent
+    component: RegisterComponent
   }
 ];
 

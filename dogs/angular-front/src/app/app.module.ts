@@ -11,11 +11,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DogsComponent } from './page/dogs/dogs.component';
 import { DogDetailComponent } from './page/dog-detail/dog-detail.component';
-import { OwnerRegisterComponent } from './page/owner-register/owner-register.component';
+import { CommonRegisterComponent } from './page/register/common-register/common-register.component';
+import { OwnerRegisterComponent } from './page/register/owner-register/owner-register.component';
+import { RegisterComponent } from './page/register/register.component';
+import { ConfirmRegisterComponent } from './page/register/confirm-register/confirm-register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,10 @@ import { OwnerRegisterComponent } from './page/owner-register/owner-register.com
     LoginComponent,
     DogsComponent,
     DogDetailComponent,
-    OwnerRegisterComponent
+    CommonRegisterComponent,
+    OwnerRegisterComponent,
+    RegisterComponent,
+    ConfirmRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +44,10 @@ import { OwnerRegisterComponent } from './page/owner-register/owner-register.com
     MatInputModule,
     MatToolbarModule,
     MatButtonToggleModule,
+    MatStepperModule,
+    MatRadioModule,
+    MatListModule,
+    MatDividerModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule

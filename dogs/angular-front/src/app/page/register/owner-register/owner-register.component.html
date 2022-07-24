@@ -1,0 +1,51 @@
+<div>
+  <span>ワンちゃん志願者登録</span>
+    <p>ペットの情報を記入してください。</p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>ペットの名前</mat-label>
+        <input type="name" id="name" name="name" [(ngModel)]="dog.name" #name="ngModel" matInput required (change)="checkInput($event)">
+        <mat-error *ngIf="name.errors?.required">
+          名前は<strong>必須項目です</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>犬種</mat-label>
+        <input type="kind" id="kind" name="kind" [(ngModel)]="dog.kind" #kind="ngModel" matInput required (change)="checkInput($event)">
+        <mat-error *ngIf="kind.errors?.required">
+         犬種は<strong>必須項目です</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>ペットの年齢</mat-label>
+        <input type="age" id="age" name="age" [(ngModel)]="dog.age" #age="ngModel" matInput required (change)="checkInput($event)">
+        <mat-error *ngIf="age.errors?.required">
+         年齢は<strong>必須項目です</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-radio-group class="full-width" aria-label="Select an option" [(ngModel)]="dog.sex" #sex="ngModel" (change)="checkInput($event)">
+        <mat-radio-button value="man">オス</mat-radio-button>
+        <mat-radio-button value="woman">メス</mat-radio-button>
+      </mat-radio-group>
+    </p>
+    <p>
+      <mat-form-field class="full-width">
+          <mat-toolbar>
+            <!-- Browse Button -->
+            <button class="upload-file-button" mat-flat-button color="primary">
+              <mat-icon>attach_file</mat-icon>ファイルを選択
+            </button>
+            <!-- Readonly Input to show File names -->
+            <input class="upload-file-name" matInput [(ngModel)]="myfilename" readonly name="memberContactNo"/>
+          </mat-toolbar>
+          <!-- Fetch selected filed on change -->
+          <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload" multiple="multiple" accept="image/*" />
+      </mat-form-field>
+    </p>
+</div>
