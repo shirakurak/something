@@ -2,14 +2,13 @@ delete from users;
 delete from dogs;
 
 -- ユーザ（ワンちゃん志願者）
-insert into users values ('shirakurak', '白倉K', 'P@ssw0rd');
-insert into users values ('nakamura67', '中村S', 'password');
-insert into users values ('taro_12$&%', '山田太郎', 'password');
+insert into users values ('shirakurak', '白倉K', 'P@ssw0rd','東京都世田谷区','applicant');
+insert into users values ('nakamura0067', '中村S', 'password','東京都品川区','owner');
 
 -- ワンちゃん
-insert into dogs values ('3000000001', 'ケルベロス', '群馬', 'dog1.jpg'); 
-insert into dogs values ('3000000002', 'チワワ', '大阪', 'dog2.jpg');
-insert into dogs values ('3000000003', 'ハチ公', '渋谷区道玄坂２丁目１', 'dog3.jpg');
-insert into dogs values ('3000000004', 'パトラッシュ', 'ベルギー', 'dog4.jpg');
-insert into dogs values ('3000000005', 'イッヌ', '北海道', 'dog5.jpg');
-insert into dogs values ('3000000006', '犬じゃなくね？こいつ', 'YOKOHAMA', 'dog6.jpg');
+insert into dogs values ('nakamura0067_ケルベロス','nakamura0067', 'ケルベロス','柴犬','999','woman', 'nakamura0067_ケルベロス.jpg'); 
+insert into dogs values ('nakamura0067_チワワ','nakamura0067', 'チワワ','チワワ','5', 'woman', 'nakamura0067_チワワ.jpg');
+insert into dogs values ('nakamura0067_ハチ公','nakamura0067', 'ハチ公','秋田犬','90', 'man', 'nakamura0067_ハチ公.jpg');
+insert into dogs values ('nakamura0067_パトラッシュ','nakamura0067', 'パトラッシュ','ブービエ・デ・フランダース','150','man', 'nakamura0067_パトラッシュ.jpg');
+insert into dogs values ('nakamura0067_イッヌ','nakamura0067', 'イッヌ','いらすとや', '10', 'man', 'nakamura0067_イッヌ.jpg');
+insert into dogs values ('nakamura0067_犬じゃなくね？こいつ','nakamura0067', '犬じゃなくね？こいつ','人面犬','1','man', 'nakamura0067_犬じゃなくね？こいつ.jpg');

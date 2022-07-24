@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StepperService } from 'src/app/service/stepperService';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../../models/User';
 import { Dog } from '../../models/Dog';
 
@@ -16,9 +16,6 @@ export class RegisterComponent implements OnInit {
   dog = new Dog('','','','','','')
   stepper:StepperService
   apiUrl: string = 'http://localhost:1598/api';
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' })
-  };
  
   constructor(private stepperService:StepperService, private http: HttpClient, private router: Router) {
     this.stepper = stepperService;
@@ -32,7 +29,7 @@ export class RegisterComponent implements OnInit {
       "user":this.user,
       "dog":this.dog
     };
-    this.http.post<User>(this.apiUrl+"/register/"+this.user.roll,data,this.httpOptions)
+    this.http.post<User>(this.apiUrl+"/register/"+this.user.roll,data)
       .subscribe(
         (response)=>{
           if (this.user.roll === "applicant") {
