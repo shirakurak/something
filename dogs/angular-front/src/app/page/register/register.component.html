@@ -1,0 +1,21 @@
+<mat-horizontal-stepper [linear]="true">
+    <mat-step label="Step 1" [editable]="stepper.firstStep.editable" [completed]="stepper.firstStep.completed">
+      <app-common-register></app-common-register>
+      <button matStepperNext mat-raised-button color="primary">次へ</button>
+    </mat-step>
+    <mat-step label="Step 2" [editable]="stepper.secondStep.editable" [completed]="stepper.secondStep.completed">
+      <ng-container *ngIf="user.roll=='owner'">
+        <app-owner-register></app-owner-register>
+      </ng-container>
+      <ng-container *ngIf="user.roll=='appicant'">
+        <p>ワンチャン志願者画面</p>
+      </ng-container>
+      <button matStepperPrevious mat-raised-button color="primary">戻る</button>
+      <button matStepperNext mat-raised-button color="primary">次へ</button>
+    </mat-step>
+    <mat-step label="Step 3">
+      <app-confirm-register></app-confirm-register>
+      <button matStepperPrevious mat-raised-button color="primary">戻る</button>
+      <button (click)="onSubmit()" mat-raised-button color="primary">登録</button>
+    </mat-step>
+</mat-horizontal-stepper>

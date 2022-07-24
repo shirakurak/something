@@ -1,0 +1,48 @@
+.full-width {
+  max-width: 600px;
+  min-width: 500px;
+}
+
+form {
+  margin: 10px;
+}
+
+.myform-wrapper {
+    margin: 50px;
+    width: 350px;
+
+}
+
+.mat-toolbar-single-row {
+  height: auto !important;
+  background: transparent;
+
+}
+
+mat-toolbar {
+  padding: 0px;
+ 
+}
+
+.upload-file-button {
+  position: relative;
+  width: 200px;
+  padding: 0px;
+}
+
+.upload-file-name {
+  position: relative;
+  padding-left: 10px;
+  width:300px;
+}
+
+#fileUpload {
+    position: absolute;
+    z-index: 9;
+    opacity: 0;
+    height: 100%;
+    width: 200px;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+}

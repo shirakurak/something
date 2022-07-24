@@ -1,54 +1,25 @@
-:host {
-  display: block;
-  padding:24px;
-}
-
-.login-card {
-  max-width: auto;
-}
-
-.login-form .register-form {
-  display: block;
+.login {
+  display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
-.errorMsg{
-  color:red;
+.login-card {
+  margin: 24px;
+  width:400px;
 }
 
-mat-form-field {
-  width: 100%;
-}
-
-mat-button-toggle-group {
+.login-form {
   display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-mat-card {
-  left:50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%); padding:0px;
-  max-width: 600px;
-  min-width: 500px;
+.mat-form-field {
+  width:90%;
+  margin: 12px;
 }
 
-mat-button-toggle {
+.login-form button {
   width: 50%;
-  background-color:powderblue;
-  font:bold;
-  font-size: 20px;
-}
-
-.mat-button-toggle-checked {
-  background-color:teal;
-}
-
-mat-card-content {
-  margin: 20px;
-  padding-bottom: 20px;
-}
-
-button {
-  width:100%;
 }

@@ -10,4 +10,7 @@ import com.example.demo.entity.Dog;
 @Mapper
 public interface DogMapper extends JpaRepository<Dog, String> {
 	List<Dog> findAll();
+	
+	@SuppressWarnings("unchecked")
+	Dog save(Dog dog);
 }

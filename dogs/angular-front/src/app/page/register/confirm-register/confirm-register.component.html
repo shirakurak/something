@@ -1,0 +1,23 @@
+<ng-container>
+  <mat-list>
+        <mat-list-item>ID: {{user.id}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>ユーザ名: {{user.name}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>住所: {{user.address}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngIf="user.roll === 'owner'">ペットの名前: {{dog.name}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngIf="user.roll === 'owner'">犬種: {{dog.kind}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngIf="user.roll === 'owner'">ペットの年齢: {{dog.age}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngIf="user.roll === 'owner'">ペットの性別: {{sex}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <div class="thumbnail" *ngIf="user.roll === 'owner'">
+          <span>ペットの写真:</span>
+          <img src="{{dog.image}}">
+        </div>
+        <mat-divider></mat-divider>
+  </mat-list>
+</ng-container>
